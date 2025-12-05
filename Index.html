@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Animated Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="animation-layer"></div>
+
+<div class="wrapper">
+    <div class="search-box">
+        <input id="city" type="text" placeholder="Search city...">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="weather-card" id="weather-card">
+        <div class="weather-icon">
+            <img id="icon" src="" alt="">
+        </div>
+
+        <h2 id="city-name"></h2>
+        <h1 id="temp"></h1>
+        <p id="desc"></p>
+
+        <div class="details">
+            <p id="humidity"></p>
+            <p id="wind"></p>
+        </div>
+    </div>
+
+    <p id="error" class="error"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
