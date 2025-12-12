@@ -13,24 +13,24 @@
 
 ## 🌦 About The Project
 
-**Weather App** is a **fully responsive, super animated, and user-friendly weather application** that gives you real-time weather updates of any city in the world.  
+**Weather App** is a **fully responsive, modern, and interactive weather application** that shows real-time weather updates for any city.  
 
 <p align="center">
-  <img src="https://media.giphy.com/media/l0HlNQ03J5JxX6lva/giphy.gif" alt="weather demo" width="600">
+  <img src="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png" alt="Weather App Screenshot" width="700">
 </p>
 
-This project is built with **HTML, CSS, and JavaScript** and fetches live data from a reliable weather API.
+This project uses **HTML, CSS, JavaScript**, and a **weather API** to fetch live data.
 
 ---
 
 ## 🚀 Features
 
-- 🔥 **Live Weather Updates**: Get accurate weather conditions in real-time.
-- 🌍 **Search by City**: Type any city and instantly see its weather.
-- 📱 **Responsive Design**: Works perfectly on desktop, tablet, and mobile.
-- 🎨 **Animated UI**: Smooth animations for weather icons and background.
-- ☁️ **Multiple Weather Details**: Temperature, Humidity, Wind Speed, Pressure, Sunrise & Sunset times.
-- ⚡ **Fast and Lightweight**: Optimized for quick loading and performance.
+- 🔥 **Real-Time Weather**: Get current weather updates instantly.
+- 🌍 **City Search**: Look up weather anywhere in the world.
+- 📱 **Responsive Design**: Looks perfect on mobile, tablet, and desktop.
+- 🎨 **Smooth Animations**: CSS animated weather icons and backgrounds.
+- ☁️ **Detailed Info**: Temperature, Humidity, Wind Speed, Pressure, Sunrise & Sunset.
+- ⚡ **Fast & Lightweight**: Optimized for performance.
 
 ---
 
@@ -47,8 +47,12 @@ This project is built with **HTML, CSS, and JavaScript** and fetches live data f
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="https://i.ibb.co/7tGnqCw/weather-app-demo.png" alt="weather app screenshot" width="700">
+  <a href="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png">
+    <img src="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png" width="600" alt="Weather App Screenshot" style="border-radius:15px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" />
+  </a>
 </p>
+
+*Hover on the screenshot for effect*  
 
 ---
 
