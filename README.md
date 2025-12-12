@@ -13,24 +13,30 @@
 
 ## 🌦 About The Project
 
-**Weather App** is a **fully responsive, modern, and interactive weather application** that shows real-time weather updates for any city.  
+**Weather App** is a **modern, fully responsive, interactive weather application** that provides **real-time weather updates** for any city in the world.  
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png" alt="Weather App Screenshot" width="700">
+  <!-- Animated Weather Icons -->
+  <img src="https://raw.githubusercontent.com/ManthanSahu20/weather-app/main/assets/icons/sun.svg" width="80" alt="Sunny">
+  <img src="https://raw.githubusercontent.com/ManthanSahu20/weather-app/main/assets/icons/cloud.svg" width="80" alt="Cloudy">
+  <img src="https://raw.githubusercontent.com/ManthanSahu20/weather-app/main/assets/icons/rain.svg" width="80" alt="Rainy">
+  <img src="https://raw.githubusercontent.com/ManthanSahu20/weather-app/main/assets/icons/snow.svg" width="80" alt="Snowy">
 </p>
 
-This project uses **HTML, CSS, JavaScript**, and a **weather API** to fetch live data.
+<p align="center">
+  <i>⚡ Animated icons show the dynamic weather feel!</i>
+</p>
 
 ---
 
 ## 🚀 Features
 
-- 🔥 **Real-Time Weather**: Get current weather updates instantly.
-- 🌍 **City Search**: Look up weather anywhere in the world.
-- 📱 **Responsive Design**: Looks perfect on mobile, tablet, and desktop.
-- 🎨 **Smooth Animations**: CSS animated weather icons and backgrounds.
+- 🔥 **Real-Time Weather** updates.
+- 🌍 **Search by City** functionality.
+- 📱 **Responsive & Mobile Friendly Design**.
+- 🎨 **Animated Weather Icons** using SVGs & CSS animations.
 - ☁️ **Detailed Info**: Temperature, Humidity, Wind Speed, Pressure, Sunrise & Sunset.
-- ⚡ **Fast & Lightweight**: Optimized for performance.
+- ⚡ **Fast & Lightweight**: Optimized for smooth performance.
 
 ---
 
@@ -41,18 +47,6 @@ This project uses **HTML, CSS, JavaScript**, and a **weather API** to fetch live
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
 </p>
-
----
-
-## 📸 Screenshots
-
-<p align="center">
-  <a href="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png">
-    <img src="https://raw.githubusercontent.com/manthansahu20/weather-app/main/assets/weather-screenshot.png" width="600" alt="Weather App Screenshot" style="border-radius:15px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform 0.3s;" />
-  </a>
-</p>
-
-*Hover on the screenshot for effect*  
 
 ---
 
