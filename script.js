@@ -1,100 +1,100 @@
 const apiKey = "400a223ca92f21b862db2553668c11df";
 
+const iconMap = {
+  Clear: "wi-day-sunny",
+  Rain: "wi-rain",
+  Snow: "wi-snow",
+  Clouds: "wi-cloudy",
+  Thunderstorm: "wi-thunderstorm",
+  Mist: "wi-fog"
+};
+
+const themes = {
+  Clear: "linear-gradient(135deg,#f6d365,#fda085)",
+  Rain: "linear-gradient(135deg,#2c3e50,#3498db)",
+  Snow: "linear-gradient(135deg,#83a4d4,#b6fbff)",
+  Thunderstorm: "linear-gradient(135deg,#141E30,#243B55)",
+  Clouds: "linear-gradient(135deg,#bdc3c7,#2c3e50)"
+};
+
+document.getElementById("city").addEventListener("keypress", e => {
+  if (e.key === "Enter") getWeather();
+});
+
 async function getWeather() {
-    let city = document.getElementById("city").value;
-    let errorBox = document.getElementById("error");
-    let card = document.getElementById("weather-card");
-    let animationLayer = document.getElementById("animation-layer");
+  const city = city.value;
+  const loader = document.getElementById("loader");
+  const card = document.getElementById("weather-card");
+  const error = document.getElementById("error");
+  const layer = document.getElementById("animation-layer");
 
-    errorBox.innerText = "";
-    animationLayer.innerHTML = "";
+  error.innerText = "";
+  layer.innerHTML = "";
+  card.style.display = "none";
 
-    if (city === "") {
-        errorBox.innerText = "Please enter a city.";
-        return;
-    }
+  if (!city) {
+    error.innerText = "Please enter a city";
+    return;
+  }
 
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    let res = await fetch(url);
-    let data = await res.json();
+  loader.style.display = "block";
 
-    if (data.cod == 404) {
-        card.style.display = "none";
-        errorBox.innerText = "City not found!";
-        return;
-    }
+  try {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    );
+    const data = await res.json();
+
+    if (data.cod !== 200) throw new Error("City not found");
+
+    const type = data.weather[0].main;
 
     document.getElementById("city-name").innerText = data.name;
-    document.getElementById("temp").innerText = data.main.temp + "°C";
+    document.getElementById("temp").innerText = `${data.main.temp}°C`;
     document.getElementById("desc").innerText = data.weather[0].description;
-    document.getElementById("humidity").innerText = "Humidity: " + data.main.humidity + "%";
-    document.getElementById("wind").innerText = "Wind: " + data.wind.speed + " m/s";
+    document.getElementById("humidity").innerText = `Humidity: ${data.main.humidity}%`;
+    document.getElementById("wind").innerText = `Wind: ${data.wind.speed} m/s`;
 
-    // Static Icons
-    let iconCodes = {
-        "Clear": "https://openweathermap.org/img/wn/01d.png",
-        "Clouds": "https://openweathermap.org/img/wn/03d.png",
-        "Rain": "https://openweathermap.org/img/wn/09d.png",
-        "Thunderstorm": "https://openweathermap.org/img/wn/11d.png",
-        "Snow": "https://openweathermap.org/img/wn/13d.png",
-        "Mist": "https://openweathermap.org/img/wn/50d.png"
-    };
+    const icon = document.getElementById("icon");
+    icon.className = `wi ${iconMap[type] || "wi-day-sunny"}`;
 
-    document.getElementById("icon").src =
-        iconCodes[data.weather[0].main] || iconCodes["Clear"];
+    document.body.style.background = themes[type] || themes.Clear;
 
-    /* WEATHER ANIMATION BASED ON CONDITION */
-    let weatherType = data.weather[0].main;
-
-    if (weatherType === "Rain") createRain(animationLayer);
-    else if (weatherType === "Snow") createSnow(animationLayer);
-    else if (weatherType === "Clouds") createClouds(animationLayer);
-    else if (weatherType === "Mist") createFog(animationLayer);
-    else if (weatherType === "Thunderstorm") createThunder(animationLayer);
+    if (type === "Rain") rain(layer);
+    if (type === "Snow") snow(layer);
+    if (type === "Thunderstorm") thunder(layer);
 
     card.style.display = "block";
+
+  } catch {
+    error.innerText = "City not found!";
+  }
+
+  loader.style.display = "none";
 }
 
-
-/* FUNCTIONS FOR ANIMATIONS */
-function createRain(layer) {
-    for (let i = 0; i < 80; i++) {
-        let drop = document.createElement("div");
-        drop.classList.add("rain-drop");
-        drop.style.left = Math.random() * 100 + "%";
-        drop.style.animationDuration = (0.4 + Math.random() * 0.5) + "s";
-        layer.appendChild(drop);
-    }
+/* Animations */
+function rain(layer) {
+  for (let i = 0; i < 60; i++) {
+    let d = document.createElement("div");
+    d.className = "rain-drop";
+    d.style.left = Math.random() * 100 + "%";
+    layer.appendChild(d);
+  }
 }
 
-function createSnow(layer) {
-    for (let i = 0; i < 50; i++) {
-        let flake = document.createElement("div");
-        flake.classList.add("snow-flake");
-        flake.style.left = Math.random() * 100 + "%";
-        flake.style.animationDuration = (2 + Math.random() * 2) + "s";
-        layer.appendChild(flake);
-    }
+function snow(layer) {
+  for (let i = 0; i < 40; i++) {
+    let s = document.createElement("div");
+    s.className = "snow";
+    s.style.left = Math.random() * 100 + "%";
+    layer.appendChild(s);
+  }
 }
 
-function createClouds(layer) {
-    for (let i = 0; i < 3; i++) {
-        let cloud = document.createElement("div");
-        cloud.classList.add("cloud");
-        cloud.style.top = (20 + i * 80) + "px";
-        layer.appendChild(cloud);
-    }
-}
-
-function createFog(layer) {
-    let fog = document.createElement("div");
-    fog.classList.add("fog");
-    layer.appendChild(fog);
-}
-
-function createThunder(layer) {
-    createRain(layer);
-    let flash = document.createElement("div");
-    flash.classList.add("thunder");
-    layer.appendChild(flash);
+function thunder(layer) {
+  rain(layer);
+  let t = document.createElement("div");
+  t.className = "thunder";
+  layer.appendChild(t);
 }
